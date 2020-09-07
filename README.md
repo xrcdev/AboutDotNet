@@ -1,1 +1,37 @@
 # AboutDotNet
+
+- 语言基础
+- 委托
+- 泛型
+- 集成等面向对象
+设计模式
+## 框架
+- mvc
+- webapi
+- RunAsService
+- winform,c/s
+- wpf
+## 性能优化
+- gc,
+- 多线程
+- clr
+- 常用算法
+- 性能测试工具
+## 进程通讯
+- 网络编程:socket,restsharp,rpc,wcf,webservice
+- 管道
+- 共享内存
+- 文件监控 
+## 第三方框架
+- Dapper
+- RabbitMq
+- Redis
+- Log
+- Fiddler
+- Ioc框架选一个
+## 测试
+- Moq
+## aboutDotNet项目
+- 包含文档
+- 基础代码
+- 常用类库

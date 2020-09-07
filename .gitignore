@@ -1,0 +1,21 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+*.dll
+*.exe
+*.pdb
+*.cache
+/WebApplication1/obj
+/AboutCSharpLanguage/bin/Debug/netcoreapp3.1
+/AboutCSharpLanguage/obj
+/ConsoleApp1NFW/bin/Debug
+/ConsoleApp1NFW/obj/Debug
+/Doc/.vs
+/WebApplication1/bin/Debug/netcoreapp3.1
+/WebApplicationApi/bin/Debug/netcoreapp3.1
+/WebApplicationApi/obj
+/WebApplicationFullMvc/bin/Debug/netcoreapp3.1
+/WebApplicationFullMvc/obj
+/WebApplicationPerfTest/bin/Debug/netcoreapp3.1
+/WebApplicationPerfTest/obj
