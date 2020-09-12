@@ -1,0 +1,7 @@
+G:\GitMyRepos\AboutDotNet\GenericTest\bin\Debug\GenericTest.exe.config
+G:\GitMyRepos\AboutDotNet\GenericTest\bin\Debug\GenericTest.exe
+G:\GitMyRepos\AboutDotNet\GenericTest\bin\Debug\GenericTest.pdb
+G:\GitMyRepos\AboutDotNet\GenericTest\obj\Debug\GenericTest.csprojAssemblyReference.cache
+G:\GitMyRepos\AboutDotNet\GenericTest\obj\Debug\GenericTest.csproj.CoreCompileInputs.cache
+G:\GitMyRepos\AboutDotNet\GenericTest\obj\Debug\GenericTest.exe
+G:\GitMyRepos\AboutDotNet\GenericTest\obj\Debug\GenericTest.pdb

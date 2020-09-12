@@ -1,0 +1,7 @@
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\bin\Debug\GenenicVarianceTest.exe.config
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\bin\Debug\GenenicVarianceTest.exe
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\bin\Debug\GenenicVarianceTest.pdb
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\obj\Debug\GenenicVarianceTest.csprojAssemblyReference.cache
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\obj\Debug\GenenicVarianceTest.csproj.CoreCompileInputs.cache
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\obj\Debug\GenenicVarianceTest.exe
+G:\GitMyRepos\AboutDotNet\GenenicVarianceTest\obj\Debug\GenenicVarianceTest.pdb

@@ -1,0 +1,6 @@
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\obj\Debug\GenericVarianceTest2.csproj.CoreCompileInputs.cache
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\bin\Debug\GenericVarianceTest2.exe.config
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\bin\Debug\GenericVarianceTest2.exe
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\bin\Debug\GenericVarianceTest2.pdb
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\obj\Debug\GenericVarianceTest2.exe
+G:\GitMyRepos\AboutDotNet\GenericVarianceTest2\obj\Debug\GenericVarianceTest2.pdb
