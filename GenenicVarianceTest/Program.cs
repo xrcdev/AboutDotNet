@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,182 @@ namespace GenenicVarianceTest
             Animal<int, string> animal = new Cat<int, string>();
             animal.Walk(5);
             animal.Drive(20, "bike");
+
+            IEnumerable<Animal<int, string>> animals = new List<Cat<int, string>>();
+            //List<Animal<int, string>> animals2 = new List<Cat<int, string>>();
+
+            IContainer<Material, double, double> gBottle1 = new Bottle<Glass, double, double>();
+            IContainer<Material, Glass, double> gBottle2 = new Bottle<Glass, Material, double>();
+
+            //Ball<int, Inch, Material> ball = new Ball<int, Inch, Glass>();
+
+
+            //Size<double, MeasureUnit> size = new GenenicVarianceTest.Size<double, Inch>();
+            //MeasureUnit<FileStream> measure = new MeasureUnit<Stream>();
+
+            IMeasureUnit<IDisposable> measure = new MeasureUnit<FileStream>();
+            IMeasureUnit<IP> measure2 = new MeasureUnit<ISub>();
+
+            //LengthInfo<MeasureUnit<int>> lengthInfo = new LengthInfo<Inch<int>>();
+            //LengthInfo<Inch<int>> lengthInfo = new LengthInfo<MeasureUnit<int>>();
             Console.ReadLine();
         }
     }
+
+    #region IContainer
+    //interface IContainer<in MAT, in FillT, out CurrentCapacityT>
+    interface IContainer<out CurrentCapacityT, in MAT, in FillT>
+    {
+        CurrentCapacityT Fill(MAT m, FillT f);
+    }
+
+    //internal class Bottle<MAT, FillT, CurrentCapacityT> : IContainer<MAT, FillT, CurrentCapacityT>
+    internal class Bottle<CurrentCapacityT, MAT, FillT> : IContainer<CurrentCapacityT, MAT, FillT>
+    {
+        //public CurrentCapacityT Fill(MAT m, FillT f)
+        public CurrentCapacityT Fill(MAT m, FillT f)
+        {
+            throw new NotImplementedException();
+        }
+    }
+    #endregion
+
+    interface IP { }
+    interface ISub : IP { }
+
+    public interface IMaterial<Mat> { string MeterialName { get; set; } };
+    public class Material<Mat> : IMaterial<Mat>
+    {
+        public string MeterialName { get; set; }
+    }
+    public class IGlass : Material
+    {
+        public string MeterialName { get; set; }
+    }
+    public class IPlastic : Material
+    {
+        public string MeterialName { get; set; }
+    }
+
+
+
+    public interface IMeasureUnit<out T>
+    {
+        string UnitName { get; set; }
+    }
+    public class MeasureUnit<T> : IMeasureUnit<T>
+    {
+        public string UnitName { get; set; }
+        public void PrintUnitName(T measureUnit)
+        {
+            Console.WriteLine($"[MeasureUnit.PrintUnitName] T Type:{measureUnit.GetType()}");
+        }
+    }
+
+    public class Inch<T> : IMeasureUnit<T>
+    {
+        public string UnitName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public new void PrintUnitName(T measureUnit)
+        {
+            Console.WriteLine($"[MeasureUnit.PrintUnitName] T Type:{measureUnit.GetType()}");
+        }
+    }
+    public class Meter<T> : IMeasureUnit<T>
+    {
+        public string UnitName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        //string IMeasureUnit.UnitName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    }
+
+    public class LengthInfo<T> : IMeasureUnit<T>
+    {
+        public string UnitName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        void PrintLength(T measureUnit)
+        {
+            Console.WriteLine($"T Type:{measureUnit.GetType()}");
+        }
+    }
+    public interface ISize<in valT, out MeasureUnitT>
+    {
+        MeasureUnitT GetMeasureUnitType();
+        void PrintSize();
+    }
+
+    public class Size<valT, MeasureUnitT> : ISize<valT, MeasureUnitT>
+    {
+        public string UnitName { get; set; }
+
+        public MeasureUnitT GetMeasureUnitType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintSize()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public interface IBal<valT, MeasureUnitT, Mat> : ISize<valT, MeasureUnitT>, IMaterial<Mat> { }
+
+    public class Ball<valT, MeasureUnitT, Mat> : IBal<valT, MeasureUnitT, Mat>
+    {
+        public string MeterialName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public MeasureUnitT GetMeasureUnitType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintSize()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class Basketball<valT, MeasureUnitT, Mat> : Ball<valT, MeasureUnitT, Mat>
+    {
+        public string MeterialName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public MeasureUnitT GetMeasureUnitType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintSize()
+        {
+            throw new NotImplementedException();
+        }
+    }
+    public class PingPang<valT, MeasureUnitT, Mat> : Ball<valT, MeasureUnitT, Mat>
+    {
+        public string MeterialName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public MeasureUnitT GetMeasureUnitType()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintSize()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class Material
+    {
+        public string MeterialName { get; set; }
+    }
+
+    public class Glass : Material
+    {
+        public string MeterialName { get; set; }
+    }
+    public class Plastic : Material
+    {
+        public string MeterialName { get; set; }
+    }
+
+    #region Animal cat
 
     interface IMove<in SpeedT, in vehicleT>
     {
@@ -101,5 +275,6 @@ namespace GenenicVarianceTest
         }
     }
 
+    #endregion
 
 }

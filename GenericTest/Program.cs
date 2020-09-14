@@ -18,7 +18,7 @@ namespace GenericTest
             //animals[0] = new Turtle();
             //List<Animal> cats = new List<Animal>();
 
-            IEnumerable<Animal> animals= new List<Cat>();
+            IEnumerable<Animal> animals = new List<Cat>();
 
 
             Animal animal = new Animal();
@@ -32,16 +32,16 @@ namespace GenericTest
             animal2.Move1(3);
             animal2.MoveWrapper(2);
 
-            Animal<double> animal3 = new Animal<double>();
-            animal3.Move(2);
+            Animal<double> animal3 = new Turtle<double>();
+            animal3.Move(2);//调用的是 Animal 的方法,而不是Turtle的 方法
             animal3.Move1(3.1);
             animal3.MoveWrapper(2);
 
-            Type td = typeof(Animal<double>);
-            foreach (MethodInfo minfo in td.GetMethods())
-            {
-                System.Diagnostics.Debug.WriteLine($"method name: {minfo.Name}, IsGenericMethod:{minfo.IsGenericMethod},IsGenericMethodDefinition: {minfo.IsGenericMethodDefinition}");
-            }
+            //Type td = typeof(Animal<double>);
+            //foreach (MethodInfo minfo in td.GetMethods())
+            //{
+            //    System.Diagnostics.Debug.WriteLine($"method name: {minfo.Name}, IsGenericMethod:{minfo.IsGenericMethod},IsGenericMethodDefinition: {minfo.IsGenericMethodDefinition}");
+            //}
         }
 
         public static void DisplayGenericType(Type t, string caption)
@@ -68,11 +68,18 @@ namespace GenericTest
         }
         public void Move<T>(T speed)
         {
-            System.Diagnostics.Debug.WriteLine($"[Generic Method] Name:{Name} is moving ! Type:{this.GetType()}");
+            //System.Diagnostics.Debug.WriteLine($"[Generic Method] Name:{Name} is moving ! Type:{this.GetType()}");
         }
         public void MoveWrapper<T>(T s)
         {
             Move(s);
+            Move<T>(s);
+        }
+
+        public void MoveWrapper(int s)
+        {
+            Move(100);
+            Move<int>(100);
         }
     }
 
@@ -80,15 +87,15 @@ namespace GenericTest
     {
         public void Move1(T speed)
         {
-            System.Diagnostics.Debug.WriteLine($"[Generic Method] Name:{Name} is moving ! Type:{this.GetType()}");
+            System.Diagnostics.Debug.WriteLine($"Animal [Generic Method] Name:{Name} is moving ! Type:{this.GetType()}");
         }
         public void Move2<S>(S speedT)
         {
-            System.Diagnostics.Debug.WriteLine($"[Generic Method]2 Name:{Name} is moving ! Type:{this.GetType()}");
+            System.Diagnostics.Debug.WriteLine($"Animal [Generic Method]2 Name:{Name} is moving ! Type:{this.GetType()}");
         }
         public void Move(int speed)
         {
-            System.Diagnostics.Debug.WriteLine($"Name:{Name} is { (speed > 1 ? "running" : "walking") } ! Type:{this.GetType()}");
+            System.Diagnostics.Debug.WriteLine($"Animal Name:{Name} is { (speed > 1 ? "running" : "walking") } ! Type:{this.GetType()}");
         }
         public string Name { get; set; }
 
@@ -107,11 +114,11 @@ namespace GenericTest
     {
         public void Move(int speed)
         {
-            System.Diagnostics.Debug.WriteLine($"Name2:{Name} is { (speed > 1 ? "running" : "walking") } ! Type:{this.GetType()}");
+            System.Diagnostics.Debug.WriteLine($"Turtle Name2:{Name} is { (speed > 1 ? "running" : "walking") } ! Type:{this.GetType()}");
         }
         public new void Move2<S>(S speed)
         {
-            System.Diagnostics.Debug.WriteLine($"[Generic Method]2 Name:{Name} is moving ! Type:{this.GetType()}");
+            System.Diagnostics.Debug.WriteLine($"Turtle [Generic Method]2 Name:{Name} is moving ! Type:{this.GetType()}");
         }
         public void MoveWrapper<T>(T s)
         {
